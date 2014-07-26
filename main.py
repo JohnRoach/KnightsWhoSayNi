@@ -15,8 +15,10 @@ j = 1
 def make_gif():
     os.system("convert   -delay 40   -loop 0   Screenshots/screenshot*.png   knights_tour.gif")
 
+
 def get_moves(start_move):
     return knightmove.knights_tour(start_move, 8)
+
 
 def scratch(move):
     move_x, move_y = move
@@ -27,12 +29,15 @@ def scratch(move):
     for index in range(len(square_list)):
         screen.blit(square, square_list[index])
 
+
 def draw_line():
     for index in range(len(line_list)-1):
         pygame.draw.line(screen, black, (line_list[index]), (line_list[index+1]), 2)
 
+
 def draw_dot():
     return pygame.draw.circle(screen, red, (line_list[i]), 3, 0)
+
 
 def screenshot():
     if j <= 9:
@@ -74,8 +79,6 @@ while 1:
     pygame.draw.line(screen, black, (250, 0), (250, 400), 3)
     pygame.draw.line(screen, black, (300, 0), (300, 400), 3)
     pygame.draw.line(screen, black, (350, 0), (350, 400), 3)
-
-
 
     scratch(moves[i])
     draw_line()
